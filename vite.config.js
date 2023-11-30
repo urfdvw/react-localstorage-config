@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     build: {
         lib: {
-            entry: path.resolve("src", "react-user-config/index.jsx"),
+            entry: path.resolve("src", "react-user-config/index.js"),
             name: "react-user-config",
             fileName: (format) => `react-user-config.${format}.js`,
         },
