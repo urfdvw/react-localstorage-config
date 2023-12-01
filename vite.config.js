@@ -1,23 +1,9 @@
-import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { viteSingleFile } from "vite-plugin-singlefile";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-    build: {
-        lib: {
-            entry: path.resolve("src", "react-user-config/index.js"),
-            name: "react-user-config",
-            fileName: (format) => `react-user-config.${format}.js`,
-        },
-        rollupOptions: {
-            external: ["react", "react-dom"],
-            output: {
-                globals: {
-                    react: "React",
-                },
-            },
-        },
-        outDir: "./release",
-    },
-    plugins: [react()],
+    plugins: [react(), viteSingleFile()],
+    base: "./",
 });
