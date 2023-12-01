@@ -35,6 +35,7 @@ export default function useConfig(schemas) {
                 var config_values = getConfigWithDefaults(get_config(schema_name), schema);
                 set_config(schema_name, config_values);
             }
+            setInitStep(-1); // mark as done
         }
     }, [initStep]);
 
@@ -67,5 +68,5 @@ export default function useConfig(schemas) {
         }
     }
 
-    return { config: localStorageState, set_config, set_config_field };
+    return { config: localStorageState, set_config, set_config_field, ready: initStep < 0 };
 }

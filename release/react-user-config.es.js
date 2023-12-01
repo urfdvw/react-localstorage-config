@@ -155,6 +155,7 @@ function AX(e) {
         var u = W$(a(p), d);
         l(p, u);
       }
+      i(-1);
     }
   }, [o]);
   function a(u) {
@@ -170,7 +171,7 @@ function AX(e) {
       "given value " + p + " has a different type from config schema. Given: " + typeof p + ", required: " + typeof m[d]
     ) : l(u, { ...m, [d]: p }) : console.error("no field called " + d + " in config schema " + u);
   }
-  return { config: t, set_config: l, set_config_field: c };
+  return { config: t, set_config: l, set_config_field: c, ready: o < 0 };
 }
 var Ic = { exports: {} }, fi = {};
 /**
