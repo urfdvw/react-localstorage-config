@@ -10,18 +10,20 @@
         "preview": "vite preview",
         "test": "echo \"No test specified\""
     },
+    "peerDependencies": {
+        "@emotion/react": "11.x",
+        "@emotion/styled": "11.x",
+        "@mui/icons-material": "5.x",
+        "@mui/material": "5.x",
+        "react": "18x",
+        "react-dom": "18.x"
+    },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/icons-material": "^5.14.12",
-        "@mui/material": "^5.14.12",
         "@rjsf/core": "^5.12.1",
         "@rjsf/mui": "^5.12.1",
         "@rjsf/utils": "^5.12.1",
         "@rjsf/validator-ajv8": "^5.12.1",
         "json-schema-defaults": "^0.4.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "tslib": "^2.6.2"
     },
     "devDependencies": {

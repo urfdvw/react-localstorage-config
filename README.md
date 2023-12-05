@@ -3,7 +3,12 @@
 Utilities for setting and using user configurations.
 
 ## Install
+First make sure peer dependencies are installed
+```
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+```
 
+Then install this package.
 ```
 npm i react-user-config
 ```
