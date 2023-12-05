@@ -80,6 +80,8 @@ function App() {
 
 https://urfdvw.github.io/react-user-config/
 
+Please check the "demo" branch for demo source code.
+
 *In this demo `react-lazy-dark-theme` is used for changing the page theme.*
 
 ## Planned features
