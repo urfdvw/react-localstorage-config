@@ -18,7 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lazy-dark-theme": "^0.0.1",
-    "react-user-config": "file:./react-user-config-0.0.0.tgz"
+    "react-user-config": "file:./react-user-config-0.0.1.tgz"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
