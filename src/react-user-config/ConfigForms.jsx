@@ -7,6 +7,7 @@ import { TabPanel, a11yProps } from "./TabPanel";
 // schema form
 import Form from "@rjsf/mui";
 import validator from "@rjsf/validator-ajv8";
+import CheckboxWidget from "./CheckboxWidget";
 // user data
 import uiSchema from "./uiSchema.json";
 // utils
@@ -34,6 +35,9 @@ function SchemaForm({ initFormData, schema, onSubmit }) {
             onSubmit={handleSubmit}
             omitExtraData={true}
             onChange={handleChange}
+            widgets={{
+                CheckboxWidget: CheckboxWidget,
+            }}
         />
     );
 }
@@ -48,16 +52,23 @@ export default function ConfigForms({ schemas, config, set_config }) {
                     onChange={(event, newValue) => {
                         setTabValue(newValue);
                     }}
-                    aria-label="basic tabs example"
+                    variant="scrollable"
+                    scrollButtons="auto"
                 >
                     {schemas.map((schema, index) => {
-                        return <Tab label={schema.title} {...a11yProps(index)} key={crypto.randomUUID()} />;
+                        return (
+                            <Tab
+                                label={schema.title}
+                                {...a11yProps(index)}
+                                key={"schema_tab_key_" + toName(schema.title)}
+                            />
+                        );
                     })}
                 </Tabs>
             </Box>
             {schemas.map((schema, index) => {
                 return (
-                    <TabPanel value={tabValue} index={index} key={crypto.randomUUID()}>
+                    <TabPanel value={tabValue} index={index} key={"schema_key_" + toName(schema.title)}>
                         <SchemaForm
                             initFormData={config[toName(schema.title)]}
                             schema={schema}
