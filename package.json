@@ -17,7 +17,7 @@
     "@mui/material": "^5.14.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-lazy-dark-theme": "^0.0.1",
+    "react-lazy-dark-theme": "^0.0.2",
     "react-user-config": "file:./react-user-config-0.0.2.tgz"
   },
   "devDependencies": {
