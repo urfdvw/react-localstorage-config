@@ -5,7 +5,11 @@ Utilities for setting and using user configurations.
 ## Install
 First make sure peer dependencies are installed
 ```
-npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+npm install \
+  @mui/icons-material@^5.x \
+  @mui/material@^5.x \
+  @emotion/react@^11.x \
+  @emotion/styled@^11.x
 ```
 
 Then install this package.
@@ -45,7 +49,7 @@ import schema from "./schema.json"; // import json schema of configurations
 
 function App() {
     const schemas = [schema];
-    const { config, set_config, ready } = useConfig(schemas);
+    const { config, setConfig, ready } = useConfig(schemas);
 
     // If initialization not done, don't continue.
     if (!ready) {
@@ -58,7 +62,7 @@ function App() {
     return (
         <>
             {/* The Component used for setting the configurations */}
-            <ConfigForms schemas={schemas} config={config} set_config={set_config} />
+            <ConfigForms schemas={schemas} config={config} setConfig={setConfig} />
         </>
     );
 }
@@ -67,14 +71,14 @@ function App() {
     - `config`: the configuration object.
     - `ready`: when this indicator is true, the initialization steps are done.
         - before that, the `config` is either `{}` or not reflecting the saved configurations.
-    - `set_config`: 
+    - `setConfig`: 
         - set part of the configuration by a specific schema name and an configuration json object of that schema.
         - this function is supposed to be used only in `ConfigForms` component.
 - `ConfigForms`: component for configuration viewing and changing.
     - `schemas`: list of json schemas.
         - each schema is one section of the configuration, which is shown as a tab in the UI.
     - `config`: the configuration object from `useConfig` hook.
-    - `set_config`: the configuration setting function from `useConfig` hook.
+    - `setConfig`: the configuration setting function from `useConfig` hook.
 
 ## Demo
 

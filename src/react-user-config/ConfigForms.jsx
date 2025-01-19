@@ -10,8 +10,6 @@ import validator from "@rjsf/validator-ajv8";
 import CheckboxWidget from "./CheckboxWidget";
 // user data
 import uiSchema from "./uiSchema.json";
-// utils
-import { toName } from "./utils";
 
 // ---- form ui ----
 function SchemaForm({ initFormData, schema, onSubmit }) {
@@ -60,7 +58,7 @@ export default function ConfigForms({ schemas, config, set_config }) {
                             <Tab
                                 label={schema.title}
                                 {...a11yProps(index)}
-                                key={"schema_tab_key_" + toName(schema.title)}
+                                key={"schema_tab_key_" + schema.name}
                             />
                         );
                     })}
@@ -68,12 +66,12 @@ export default function ConfigForms({ schemas, config, set_config }) {
             </Box>
             {schemas.map((schema, index) => {
                 return (
-                    <TabPanel value={tabValue} index={index} key={"schema_key_" + toName(schema.title)}>
+                    <TabPanel value={tabValue} index={index} key={"schema_key_" + schema.name}>
                         <SchemaForm
-                            initFormData={config[toName(schema.title)]}
+                            initFormData={config[schema.name]}
                             schema={schema}
                             onSubmit={(formData) => {
-                                set_config(toName(schema.title), formData);
+                                set_config(schema.name, formData);
                             }}
                         />
                     </TabPanel>

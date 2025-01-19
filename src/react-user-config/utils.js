@@ -5,7 +5,3 @@ export function isDefined(obj) {
 export function isObject(obj) {
     return typeof obj === typeof {};
 }
-
-export function toName(string) {
-    return string.toLowerCase().split(" ").join("_");
-}

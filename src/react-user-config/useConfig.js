@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 // schema default
 import jsonSchemaDefaults from "json-schema-defaults";
 // utils
-import { isDefined, isObject, toName } from "./utils";
+import { isDefined, isObject } from "./utils";
 // local storage hook
 import { useLocalStorage } from "./useLocalStorage";
 
@@ -31,7 +31,7 @@ export default function useConfig(schemas) {
         if (initStep === 1) {
             console.log("init step 1: update localStorageState by schema defaults");
             for (const schema of schemas) {
-                const schema_name = toName(schema.title);
+                const schema_name = schema.name;
                 var config_values = getConfigWithDefaults(get_config(schema_name), schema);
                 set_config(schema_name, config_values);
             }
