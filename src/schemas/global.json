@@ -1,5 +1,6 @@
 {
-    "title": "Global",
+    "name": "global",
+    "title": "Global Settings",
     "description": "Settings that affect everything.",
     "type": "object",
     "properties": {

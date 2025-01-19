@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import { useConfig, ConfigForms } from "react-user-config";
 import DarkTheme from "react-lazy-dark-theme";
@@ -7,7 +8,10 @@ import editor_config_schema from "./schemas/editor.json";
 
 function App() {
     const schemas = [global_config_schema, editor_config_schema];
-    const { config, set_config, ready } = useConfig(schemas);
+    const { config, setConfig, ready } = useConfig(schemas);
+    useEffect(() => {
+        console.log(config);
+    }, [config]);
 
     // If initialization not done, don't continue.
     if (!ready) {
@@ -29,7 +33,7 @@ function App() {
         <>
             <DarkTheme dark={dark} />
             {/* The Component used for setting the configurations */}
-            <ConfigForms schemas={schemas} config={config} set_config={set_config} />
+            <ConfigForms schemas={schemas} config={config} setConfig={setConfig} />
         </>
     );
 }

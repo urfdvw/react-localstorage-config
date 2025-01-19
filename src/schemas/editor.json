@@ -1,5 +1,6 @@
 {
-    "title": "Editor",
+    "name": "editor",
+    "title": "Editor Settings",
     "description": "Code editor settings.",
     "type": "object",
     "properties": {
