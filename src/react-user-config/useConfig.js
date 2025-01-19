@@ -68,5 +68,10 @@ export default function useConfig(schemas) {
         }
     }
 
-    return { config: localStorageState, set_config, set_config_field, ready: initStep < 0 };
+    return {
+        config: localStorageState,
+        setConfig: set_config,
+        setConfigField: set_config_field,
+        ready: initStep < 0,
+    };
 }

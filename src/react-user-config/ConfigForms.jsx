@@ -40,7 +40,7 @@ function SchemaForm({ initFormData, schema, onSubmit }) {
     );
 }
 
-export default function ConfigForms({ schemas, config, set_config }) {
+export default function ConfigForms({ schemas, config, setConfig }) {
     const [tabValue, setTabValue] = React.useState(0);
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -71,7 +71,7 @@ export default function ConfigForms({ schemas, config, set_config }) {
                             initFormData={config[schema.name]}
                             schema={schema}
                             onSubmit={(formData) => {
-                                set_config(schema.name, formData);
+                                setConfig(schema.name, formData);
                             }}
                         />
                     </TabPanel>

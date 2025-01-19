@@ -168,7 +168,12 @@ function VX(e) {
       "given value " + p + " has a different type from config schema. Given: " + typeof p + ", required: " + typeof f[d]
     ) : l(u, { ...f, [d]: p }) : console.error("no field called " + d + " in config schema " + u);
   }
-  return { config: t, set_config: l, set_config_field: c, ready: o < 0 };
+  return {
+    config: t,
+    setConfig: l,
+    setConfigField: c,
+    ready: o < 0
+  };
 }
 var Ac = { exports: {} }, fi = {};
 /**
@@ -29428,7 +29433,7 @@ function FX({ initFormData: e, schema: t, onSubmit: r }) {
     }
   );
 }
-function zX({ schemas: e, config: t, set_config: r }) {
+function zX({ schemas: e, config: t, setConfig: r }) {
   const [n, o] = hr.useState(0);
   return /* @__PURE__ */ _.jsxs(Vr, { sx: { flexGrow: 1 }, children: [
     /* @__PURE__ */ _.jsx(Vr, { sx: { borderBottom: 1, borderColor: "divider" }, children: /* @__PURE__ */ _.jsx(
